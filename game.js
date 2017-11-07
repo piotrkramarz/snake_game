@@ -13,4 +13,30 @@ $(function () {
         $table.append($tr);
     }
     $board.append($table);
+
+    var snakeCells = $('td').slice(0, 4).toArray();
+
+    $(snakeCells).addClass('snake');
+    drawApple();
+    drawSpeedUp();
+    drawSlowDown();
+
+    function drawApple() {
+        var $emptyCells = $('td:not(".snake")');
+
+        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('apple')
+    }
+
+    function drawSpeedUp(){
+        var $emptyCells = $('td:not(".snake")');
+
+        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('speedUp')
+    }
+
+    function drawSlowDown(){
+        var $emptyCells = $('td:not(".snake")');
+
+        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('slowDown')
+    }
+
 });
