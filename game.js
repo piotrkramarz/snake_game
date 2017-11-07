@@ -121,5 +121,5 @@ $(function () {
 
         }, speed)
     }
-    runInterval(500)
+    runInterval(300)
 });
