@@ -1,0 +1,26 @@
+.cell {
+    border: 1px solid rgba(34, 35, 34, 0.54);
+    width: 35px;
+    height: 35px;
+    background: rgba(225, 230, 233, 0.73);
+}
+
+.apple {
+    background: #b81f2b;
+}
+
+.speedUp {
+    background: #f4ff69;
+}
+
+.slowDown {
+    background: black;
+}
+
+.snake {
+    background: #1bcc47;
+}
+
+.head {
+    background: #15ff66;
+}
