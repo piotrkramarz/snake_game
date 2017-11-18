@@ -75,6 +75,7 @@ $(function () {
 
     var points = 0;
     var interval;
+    var modifySpeed = 500;
     function runInterval(s){
         var speed = s;
         clearInterval(interval);
@@ -95,13 +96,15 @@ $(function () {
 
             if ($nextHead.hasClass('slowDown') === true) {
                 $nextHead.removeClass('slowDown');
-                runInterval(1000)
+                modifySpeed *= 1.2
+                runInterval(modifySpeed)
                 drawSlowDown()
             }
 
             if ($nextHead.hasClass('speedUp') === true) {
                 $nextHead.removeClass('speedUp');
-                runInterval(300)
+                modifySpeed *= 0.8
+                runInterval(modifySpeed)
                 drawSpeedUp()
             }
 
@@ -121,5 +124,5 @@ $(function () {
 
         }, speed)
     }
-    runInterval(300)
+    runInterval(modifySpeed)
 });
