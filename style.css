@@ -28,3 +28,7 @@ h1 {
 .head {
     background: #15ff66;
 }
+
+table {
+    margin: auto;
+}
