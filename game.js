@@ -111,10 +111,19 @@ $(function () {
             if ($nextHead.hasClass('apple') === false) {
                 $(tail).removeClass('snake');
                 snakeCells = snakeCells.slice(1);
+
             } else {
-                $nextHead.removeClass('apple');
-                points += 1;
-                drawApple()
+
+                if (modifySpeed < 500) {
+                    $nextHead.removeClass('apple');
+                    points += 10;
+                    drawApple()
+                } else {
+                    $nextHead.removeClass('apple');
+                    points += 5;
+                    drawApple()
+                }
+
             }
 
             $('.score').text(points);

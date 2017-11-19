@@ -60,3 +60,10 @@ table {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.head2 {
+    /*background: #15ff66;*/
+    background: url("images/Bomb.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
