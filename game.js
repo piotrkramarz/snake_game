@@ -118,6 +118,13 @@ $(function () {
                     $nextHead.removeClass('apple');
                     points += 10;
                     drawApple()
+                }
+
+                if (modifySpeed < 200) {
+                    $nextHead.removeClass('apple');
+                    points += 50;
+                    drawApple()
+
                 } else {
                     $nextHead.removeClass('apple');
                     points += 5;

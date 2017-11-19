@@ -48,22 +48,13 @@ table {
 }
 
 .snake {
-    /*background: #1bcc47;*/
     background: url("images/SnakeBody.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .head {
-    /*background: #15ff66;*/
     background: url("images/SnakeHead.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.head2 {
-    /*background: #15ff66;*/
-    background: url("images/Bomb.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
