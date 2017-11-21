@@ -113,19 +113,30 @@ $(function () {
                 snakeCells = snakeCells.slice(1);
 
             } else {
-
-                if (modifySpeed < 500) {
+                if (modifySpeed < 500 && modifySpeed > 250) {
                     $nextHead.removeClass('apple');
-                    points += 10;
+                    points += 15;
                     drawApple()
                 }
 
-                if (modifySpeed < 200) {
+                if (modifySpeed <= 250 && modifySpeed > 150) {
+                    $nextHead.removeClass('apple');
+                    points += 25;
+                    drawApple()
+                }
+
+                if (modifySpeed <= 150) {
                     $nextHead.removeClass('apple');
                     points += 50;
                     drawApple()
+                }
 
-                } else {
+                if (modifySpeed > 500 && modifySpeed < 700) {
+                    $nextHead.removeClass('apple');
+                    points += 10;
+                    drawApple()
+
+                } else if (modifySpeed > 700) {
                     $nextHead.removeClass('apple');
                     points += 5;
                     drawApple()
