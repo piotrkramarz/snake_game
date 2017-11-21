@@ -17,7 +17,7 @@ $(function () {
     var snakeCells = $('td').slice(0, 4).toArray();
 
     $(snakeCells).addClass('snake');
-    drawApple();
+    drawCoin();
     drawSpeedUp();
     drawSlowDown();
 
@@ -55,10 +55,10 @@ $(function () {
         direction = moves[event.keyCode] || direction
     });
 
-    function drawApple() {
+    function drawCoin() {
         var $emptyCells = $('td:not(".snake")');
 
-        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('apple')
+        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('coin')
     }
 
     function drawSpeedUp(){
@@ -108,38 +108,38 @@ $(function () {
                 drawSpeedUp()
             }
 
-            if ($nextHead.hasClass('apple') === false) {
+            if ($nextHead.hasClass('coin') === false) {
                 $(tail).removeClass('snake');
                 snakeCells = snakeCells.slice(1);
 
             } else {
                 if (modifySpeed < 500 && modifySpeed > 250) {
-                    $nextHead.removeClass('apple');
+                    $nextHead.removeClass('coin');
                     points += 15;
-                    drawApple()
+                    drawCoin()
                 }
 
                 if (modifySpeed <= 250 && modifySpeed > 150) {
-                    $nextHead.removeClass('apple');
+                    $nextHead.removeClass('coin');
                     points += 25;
-                    drawApple()
+                    drawCoin()
                 }
 
                 if (modifySpeed <= 150) {
-                    $nextHead.removeClass('apple');
+                    $nextHead.removeClass('coin');
                     points += 50;
-                    drawApple()
+                    drawCoin()
                 }
 
-                if (modifySpeed > 500 && modifySpeed < 700) {
-                    $nextHead.removeClass('apple');
+                if (modifySpeed >= 500 && modifySpeed < 700) {
+                    $nextHead.removeClass('coin');
                     points += 10;
-                    drawApple()
+                    drawCoin()
 
                 } else if (modifySpeed > 700) {
-                    $nextHead.removeClass('apple');
+                    $nextHead.removeClass('coin');
                     points += 5;
-                    drawApple()
+                    drawCoin()
                 }
 
             }

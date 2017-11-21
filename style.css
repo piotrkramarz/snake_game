@@ -30,14 +30,14 @@ table {
     padding: 3px;
 }
 
-.apple {
-    background: url("images/Apple.png");
+.coin {
+    background: url("images/coin.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .speedUp {
-    background: url("images/Speed.png");
+    background: url("images/bullet.png");
     background-repeat: no-repeat;
     background-size: contain;}
 
@@ -48,13 +48,13 @@ table {
 }
 
 .snake {
-    background: url("images/SnakeBody.png");
+    background: url("images/snake_body.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .head {
-    background: url("images/SnakeHead.png");
+    background: url("images/snake_head.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
