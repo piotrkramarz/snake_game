@@ -42,7 +42,7 @@ table {
     background-size: contain;}
 
 .slowDown {
-    background: url("images/Bomb.png");
+    background: url("images/bomb.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -55,6 +55,30 @@ table {
 
 .head {
     background: url("images/snake_head.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.greenMushroom {
+    background: url("images/green_mushroom.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.yellowMushroom {
+    background: url("images/yellow_mushroom.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.redMushroom {
+    background: url("images/red_mushroom.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.blueMushroom {
+    background: url("images/blue_mushroom.png");
     background-repeat: no-repeat;
     background-size: contain;
 }

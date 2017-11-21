@@ -20,6 +20,10 @@ $(function () {
     drawCoin();
     drawSpeedUp();
     drawSlowDown();
+    drawGreenMushroom();
+    drawYellowMushroom();
+    drawRedMushroom();
+    drawBlueMushroom();
 
     var moves = {
         38: function up($node) {
@@ -73,6 +77,30 @@ $(function () {
         $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('slowDown')
     }
 
+    function drawGreenMushroom(){
+        var $emptyCells = $('td:not(".snake")');
+
+        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('greenMushroom')
+    }
+
+    function drawYellowMushroom(){
+        var $emptyCells = $('td:not(".snake")');
+
+        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('yellowMushroom')
+    }
+
+    function drawRedMushroom(){
+        var $emptyCells = $('td:not(".snake")');
+
+        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('redMushroom')
+    }
+
+    function drawBlueMushroom(){
+        var $emptyCells = $('td:not(".snake")');
+
+        $emptyCells.eq(Math.floor(Math.random() * $emptyCells.length)).addClass('blueMushroom')
+    }
+
     var points = 0;
     var interval;
     var modifySpeed = 500;
@@ -96,16 +124,40 @@ $(function () {
 
             if ($nextHead.hasClass('slowDown') === true) {
                 $nextHead.removeClass('slowDown');
-                modifySpeed *= 1.2
-                runInterval(modifySpeed)
+                modifySpeed *= 1.2;
+                runInterval(modifySpeed);
                 drawSlowDown()
             }
 
             if ($nextHead.hasClass('speedUp') === true) {
                 $nextHead.removeClass('speedUp');
-                modifySpeed *= 0.8
-                runInterval(modifySpeed)
+                modifySpeed *= 0.8;
+                runInterval(modifySpeed);
                 drawSpeedUp()
+            }
+
+            if ($nextHead.hasClass('greenMushroom') === true) {
+                $nextHead.removeClass('greenMushroom');
+                points = points + (Math.floor(Math.random()*10)*10);
+                drawGreenMushroom()
+            }
+
+            if ($nextHead.hasClass('yellowMushroom') === true) {
+                $nextHead.removeClass('yellowMushroom');
+                points = points + (Math.floor(Math.random()*10)*5);
+                drawYellowMushroom()
+            }
+
+            if ($nextHead.hasClass('redMushroom') === true) {
+                $nextHead.removeClass('redMushroom');
+                points = points - (Math.floor(Math.random()*10)*5);
+                drawRedMushroom()
+            }
+
+            if ($nextHead.hasClass('blueMushroom') === true) {
+                $nextHead.removeClass('blueMushroom');
+                points = points - (Math.floor(Math.random()*10)*5);
+                drawBlueMushroom()
             }
 
             if ($nextHead.hasClass('coin') === false) {
@@ -113,6 +165,7 @@ $(function () {
                 snakeCells = snakeCells.slice(1);
 
             } else {
+
                 if (modifySpeed < 500 && modifySpeed > 250) {
                     $nextHead.removeClass('coin');
                     points += 15;
